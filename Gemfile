@@ -5,8 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 # Use postgres as the database for Active Record
 gem 'pg'
-# Use Device as authentication user
+# Use Devise as authentication user
 gem 'devise'
+# i18n translations for Devise
+gem 'devise-i18n'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
