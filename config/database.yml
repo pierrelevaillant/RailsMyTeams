@@ -3,6 +3,7 @@ default: &default
   encode: unicode
   pool: 5
   timeout: 5000
+  host: localhost
 
 development:
   <<: *default
