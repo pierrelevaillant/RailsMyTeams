@@ -1,28 +1,16 @@
 Rails.application.routes.draw do
 
-  #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  authenticated :user, lambda {|u| u.superadmin } do
-   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  end
-
-
-  # namespace :admin do
-  #   resources :players
-  #   resources :categories
-  #   resources :teams
-  #   resources :convocations
-  # end
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users
-  #devise_for :admin
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
   resources :users
-
   resources :categories
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
