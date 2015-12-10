@@ -1,0 +1,10 @@
+<h1>Joueurs</h1>
+
+
+
+<a href="">
+<ul>
+	<% @players.each do |player| %>
+	<li><%= player.first_name + " " + player.last_name %></li>
+	<% end %>
+</ul>

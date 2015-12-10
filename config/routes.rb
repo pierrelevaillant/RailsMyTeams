@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'admin/convocations'
+  get 'admin/players'
+
   get 'categories/show'
-
-  get 'category/index'
-
-  get 'categoy/index'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
