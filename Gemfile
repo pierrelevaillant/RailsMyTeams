@@ -8,8 +8,6 @@ gem 'pg'
 gem 'devise'
 # Use RailsAdmin form the dashboard
 gem 'rails_admin'
-# Use CanCanCan for the Authorization
-gem "cancancan"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
