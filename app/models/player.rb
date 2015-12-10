@@ -5,6 +5,6 @@ class Player < ActiveRecord::Base
 	has_many :teams, through: :assigns
 
 	accepts_nested_attributes_for :category
-	accepts_nested_attributes_for :assigns
+	accepts_nested_attributes_for :teams
 
 end

@@ -6,8 +6,8 @@
 	<%= f.label :team_name %>
 	<%= f.text_field :team_name, class: 'form-control' %>
 
-	<%= f.fields_for :player do |cat| %>
-		<%= select("team", "player_ids", Player.all.collect {|p| [ p.first_name + " " + p.last_name, p.id ] }) %>
+	<%= f.fields_for :players do |cat| %>
+		<%= select("team", "player_ids", Player.all.collect {|p| [ p.first_name + " " + p.last_name, p.id ] }, {}, { multiple: true}) %>
 	<% end %>
 
 

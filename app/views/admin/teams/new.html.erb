@@ -6,7 +6,7 @@
 	<%= f.label :team_name %>
 	<%= f.text_field :team_name, class: 'form-control' %>
 
-	<%= select("player", "category_id", Player.all.collect {|p| [ p.first_name + " " + p.last_name, p.id ] }) %>
+	<%= select("team", "player_ids", Player.all.collect {|p| [ p.first_name + " " + p.last_name, p.id ] }, {}, { multiple: true}) %>
 
 	<%= f.submit "Save changes", class: "btn btn-primary" %>
 <% end %>

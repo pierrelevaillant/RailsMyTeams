@@ -8,7 +8,7 @@ class Admin::TeamsController < AdminController
     end
 
     def create
-        @team = Team.new(params.require(:team).permit(:team_name, :player_ids))
+        @team = Team.new(params.require(:team).permit(:team_name, player_ids: []))
         if @team.save
           redirect_to admin_teams_path
         else
@@ -27,7 +27,7 @@ class Admin::TeamsController < AdminController
 
 	def update
         @team = Team.find(params[:id])
-        @team.update_attributes(params.require(:team).permit(:team_name, :player))
+        @team.update_attributes(params.require(:team).permit(:team_name, player_ids: []))
         redirect_to admin_teams_path
     end
 
