@@ -25,6 +25,7 @@
 
     <div class="right">
      <%= link_to 'Convocations', categories_path %>
+     <a href="/a-propos" alt="A propos">A propos</a>
       <% if user_signed_in? %>
         <a href="#">Logged in as Pierre</a>
        <a href="#">Logout</a>
@@ -42,10 +43,7 @@
 </header>
 
   <main class="row">
-  <ul class="breadcrumbs">
-  <li><a href="/">Myteams</a></li>
-  <li class="current"><a href="#">Accueil</a></li>
-</ul>
+  
     <% if notice %>
     <div class="panel"><%= notice %></div>
     <% end %>
@@ -55,5 +53,13 @@
 
     <%= yield %>
   </main>
+
+  <footer>
+    <div class="row footer--review">
+    </div>
+    <div class="row footer--copyright">
+      Copyright <%= Time.now.year %> Myteams - Tous droits réservés
+    </div>
+  </footer>
 </body>
 </html>

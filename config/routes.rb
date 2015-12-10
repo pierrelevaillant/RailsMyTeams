@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< Updated upstream
   namespace :admin do
     resources :players
   end
@@ -8,6 +9,20 @@ Rails.application.routes.draw do
   get 'admin/convocations'
   get 'admin/teams'
   get 'admin/categories'
+=======
+
+  namespace :admin do
+      resources :categories
+    end
+  get 'admin' => 'admin#index'
+  get 'admin/convocations'
+  get 'admin/players'
+  get '/a-propos' => 'home#about'
+
+  get 'categories/show'
+
+  get 'category/index'
+>>>>>>> Stashed changes
 
   get 'categories/show'
 
