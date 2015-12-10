@@ -9,11 +9,7 @@
 	<%= f.label :last_name %>
 	<%= f.text_field :last_name, class: 'form-control' %>
 
-	<%= f.fields_for :category do |cat| %>
-		<%= cat.label :category_name %>
-		<%= select("player", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
-	<% end %>
-
+	<%= select("player", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
 
 	<%= f.submit "Save changes", class: "btn btn-primary" %>
 <% end %>

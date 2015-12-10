@@ -1,0 +1,15 @@
+<%= form_for [:admin, @team] do |f| %>
+	<% if notice %>
+    <div class="panel"><%= notice %></div>
+    <% end %>
+
+	<%= f.label :team_name %>
+	<%= f.text_field :team_name, class: 'form-control' %>
+
+	<%= f.fields_for :player do |cat| %>
+		<%= select("team", "player_ids", Player.all.collect {|p| [ p.first_name + " " + p.last_name, p.id ] }) %>
+	<% end %>
+
+
+	<%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

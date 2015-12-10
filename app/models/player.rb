@@ -2,10 +2,9 @@ class Player < ActiveRecord::Base
 	belongs_to :category
 	
 	has_many :assigns
-	has_many :convocations, through: :assigns
+	has_many :teams, through: :assigns
 
-	def name
-		first_name + " " + last_name
-	end
+	accepts_nested_attributes_for :category
+	accepts_nested_attributes_for :assigns
 
 end

@@ -2,9 +2,9 @@
 
 
 
-<a href=""></a>
+<%= link_to('Ajouter une équipe', new_admin_team_path) %>
 <ul>
 	<% @teams.each do |team| %>
-	<li><%= team.team_name %></li>
+	<li><%= team.team_name %> | <%= link_to('Modifier', edit_admin_team_path(team)) %></li>
 	<% end %>
 </ul>
