@@ -6,8 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(category_name: 'Séniors')
+category = Category.create(category_name: 'Séniors')
 Category.create(category_name: 'U19')
 Category.create(category_name: 'U17')
 Category.create(category_name: 'U15')
 Category.create(category_name: 'U13')
+
+Player.create(last_name: 'Messi', first_name: 'Lionel', category: category)
+Player.create(last_name: 'Bravo', first_name: 'Christian', category: category)
+Player.create(last_name: 'Potier', first_name: 'Pierre-Olivier', category: category)
+Player.create(last_name: 'Ronaldo', first_name: 'Cristiano', category: category)
+Player.create(last_name: 'Iniesta', first_name: 'Andres', category: category)

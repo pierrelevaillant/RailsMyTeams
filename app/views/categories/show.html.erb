@@ -1,4 +1,12 @@
-<h1><%= @category.category_name %></h1>
+<h1>Catégorie : <%= @category.category_name %></h1>
+
+<h2>Joueurs :</h2>
+
+<ul>
+<% @players.each do |p| %>
+<li><%= p.first_name %></li>
+<% end %>
+</ul>
 
 <p class="grey">Dernière convocation publiée le <%= @category.created_at %></p>
 
