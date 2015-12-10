@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   authenticated :user, lambda {|u| u.superadmin } do
    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   end
-=======
-<<<<<<< Updated upstream
+
   namespace :admin do
     resources :players
   end
@@ -15,7 +13,6 @@ Rails.application.routes.draw do
   get 'admin/convocations'
   get 'admin/teams'
   get 'admin/categories'
-=======
 
   namespace :admin do
       resources :categories
@@ -26,17 +23,9 @@ Rails.application.routes.draw do
   get '/a-propos' => 'home#about'
 
   get 'categories/show'
->>>>>>> 2ab297f7a19fdc4c9e317ceff40236699c29a0ee
 
   get 'categories/show'
   get 'category/index'
-<<<<<<< HEAD
-  get 'categoy/index'
-=======
->>>>>>> Stashed changes
-
-  get 'categories/show'
->>>>>>> 2ab297f7a19fdc4c9e317ceff40236699c29a0ee
 
   devise_for :users
   #devise_for :admin
