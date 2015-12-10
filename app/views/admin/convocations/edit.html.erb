@@ -1,0 +1,7 @@
+<h1>Modifier une convocation</h1>
+
+<%= @convocation.errors.full_messages.join(",") %>
+
+<%= form_for [:admin, @convocation] do |f| %>
+<%= render :partial => 'partials/convocation' , :locals => { :f => f  } %>
+<% end %>

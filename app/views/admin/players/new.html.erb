@@ -1,15 +1,23 @@
+<%= link_to 'Retour à la liste des joueurs' , admin_players_path, :class => "grey" %>
+
+<h1>Ajouter un joueur</h1>
+
+<hr>
+
 <%= form_for [:admin, @player] do |f| %>
-	<% if notice %>
-    <div class="panel"><%= notice %></div>
-    <% end %>
 
-	<%= f.label :first_name %>
-	<%= f.text_field :first_name, class: 'form-control' %>
+<% if notice %>
+<div class="panel"><%= notice %></div>
+<% end %>
 
-	<%= f.label :last_name %>
-	<%= f.text_field :last_name, class: 'form-control' %>
+<%= f.label "Nom" %>
+<%= f.text_field :first_name, class: 'form-control' %>
 
-	<%= select("player", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
+<%= f.label "Prénom" %>
+<%= f.text_field :last_name, class: 'form-control' %>
 
-	<%= f.submit "Save changes", class: "btn btn-primary" %>
+<%= f.label "Catégorie" %>
+<%= select("player", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
+
+<%= f.submit "Ajouter", class: "button small radius" %>
 <% end %>

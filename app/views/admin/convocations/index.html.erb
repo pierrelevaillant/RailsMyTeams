@@ -1,7 +1,29 @@
 <h1>Convocations</h1>
 
-<ul>
-	<% @convocations.each do |convocation| %>
-	<li><%= convocation.opposing_team %></li>
-	<% end %>
-</ul>
+<p><%= @convocations.count %> convocation(s)</p>
+
+<div class="clearfix">
+	<div class="right">
+		<%= link_to "Ajouter une convocation", new_admin_convocation_path, class: "button small radius success" %>
+	</div>
+</div>
+
+<table style="border-collapse: collapse" width="100%">
+	<thead>
+		<tr>
+			<th width="50%"></th>
+			<th>Date de création</th>
+			<th class="text-right">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @convocations.each do |convocation| %>
+		<tr>
+			<td>#<%= convocation.id %></td>
+			<td><%= convocation.created_at %></td>
+			<td class="text-right">
+				<%= link_to "Modifier", edit_admin_convocation_path(convocation) %> - <%= link_to "Supprimer", admin_convocation_path(convocation), :method => :delete %></a>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>

@@ -8,7 +8,7 @@ class Admin::PlayersController < AdminController
     end
 
     def create
-        @player = Player.new(params.require(:player).permit(:first_name, :last_name, :category_id))
+        @player = Player.new(player_params)
         if @player.save
           redirect_to admin_players_path
         else
@@ -27,8 +27,19 @@ class Admin::PlayersController < AdminController
 
 	def update
         @player = Player.find(params[:id])
-        @player.update_attributes(params.require(:player).permit(:first_name, :last_name, :category_id))
+        @player.update_attributes(player_params)
         redirect_to admin_players_path
+    end
+
+    def destroy 
+        @convocation = Player.find(params[:id])
+        @convocation.destroy!
+        redirect_to admin_players_path
+    end
+
+    private
+    def player_params
+        params.require(:player).permit(:first_name, :last_name, :category_id)
     end
 
 end

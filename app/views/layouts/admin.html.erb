@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RailsMyTeam</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>RailsMyTeam</title>
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "vendor/modernizr" %>
+	<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
- <%= yield %>
+
+	<nav class="top-bar" data-topbar="" role="navigation">
+
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="/admin" alt="Administration">Admin</a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
+
+		<section class="top-bar-section">
+			<ul class="right">
+
+				<li class="divider"></li>
+
+				<li><a href="/">Retour sur le site</a></li>
+				
+				<li class="divider"></li>
+
+				<li class="has-dropdown not-click"><a href="#">Pierre</a>
+					<ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+						<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+						<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+					</ul>
+				</li>
+
+			</ul>
+		</section>
+	</nav>
+
+	<div class="menu--bar">
+		<div class="row">
+			<ul>
+				<li><%= link_to "Convocations", admin_convocations_path %></li>
+				<li><%= link_to "Catégories", admin_categories_path %></li>
+				<li><%= link_to "Equipes", admin_teams_path %></li>
+				<li><%= link_to "Joueurs", admin_players_path %></li>
+			</ul>
+		</div>
+	</div>
+
+	<main class="row">
+		<%= yield %>
+	</main>
 </body>
 </html>

@@ -1,9 +1,26 @@
 <h1>Catégories</h1>
 
+<div class="clearfix">
+	<div class="right">
+	<%= link_to('Ajouter une catégorie', new_admin_category_path, class: "button small radius success") %>
+	</div>
+</div>
 
-<a href=""></a>
-<ul>
-	<% @categories.each do |category| %>
-	<li><%= category.category_name %></li>
-	<% end %>
-</ul>
+<table style="border-collapse: collapse" width="100%">
+	<thead>
+		<tr>
+			<th>Nom de la catégorie</th>
+			<th>Date de création</th>
+			<th class="text-right">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @categories.each do |category| %>
+		<tr>
+			<td><%= category.category_name %></td>
+			<td><%= category.created_at %></td>
+			<td class="text-right"><%= link_to('Modifier', edit_admin_category_path(category)) %> - <%= link_to "Supprimer", admin_category_path(category), :method => :delete %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

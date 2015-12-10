@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
 
-  #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # authenticated :user, lambda {|u| u.superadmin } do
-  #  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # end
   namespace :admin do
+  get 'dashboard/index'
+  end
+
+  namespace :admin do
+    root 'dashboard#index'
     resources :players
     resources :categories
     resources :teams
     resources :convocations
   end
-
-  #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,22 @@
+<p>My team
+	<%= f.select :opposing_team, @teams.map{|team| [team.team_name, team.id]} %>
+</p>
+
+<p>
+	<%= f.label :date %>
+	<%= f.date_field :date %>
+</p>
+
+<p>
+	<%= f.label :home %>
+	<%= f.check_box :home %>
+</p>
+
+<p>
+	<%= f.label :informations %>
+	<%= f.text_area :informations %>
+</p>
+
+<p>
+	<%= f.submit "Ajouter", :class => "button small" %>
+</p>

@@ -1,10 +1,28 @@
 <h1>Joueurs</h1>
 
+<div class="clearfix">
+	<div class="right">
+		<%= link_to('Ajouter un joueur', new_admin_player_path, class: "button small radius success") %>
+	</div>
+</div>
 
-
-<%= link_to('Ajouter un joueur', new_admin_player_path) %>
-<ul>
-	<% @players.each do |player| %>
-	<li><%= player.first_name + " " + player.last_name %> | <%= link_to('Modifier', edit_admin_player_path(player)) %></li>
-	<% end %>
-</ul>
+<table style="border-collapse: collapse" width="100%">
+	<thead>
+		<tr>
+			<th>Nom / Prénom</th>
+			<th>Catégorie</th>
+			<th>Date de création</th>
+			<th class="text-right">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @players.each do |player| %>
+		<tr>
+			<td><%= player.first_name + " " + player.last_name %> </td>
+			<td></td>
+			<td><%=  player.created_at %></td>
+			<td class="text-right"><%= link_to('Modifier', edit_admin_player_path(player)) %> - <%= link_to "Supprimer", admin_player_path(player), :method => :delete %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
