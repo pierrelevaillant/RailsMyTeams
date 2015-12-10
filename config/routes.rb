@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :players
+  end
+
+  # Admin congroller
   get 'admin/convocations'
-  get 'admin/players'
+  get 'admin/teams'
+  get 'admin/categories'
 
   get 'categories/show'
 

@@ -1,11 +1,17 @@
 class AdminController < ApplicationController
+
+  before_action :authenticate_user!
   
   def convocations
   	@convocations = Convocation.all
   end
 
-  def players
-  	@players = Player.all
+  def teams
+  	@teams = Team.all
+  end
+
+  def categories
+  	@categories = Category.all
   end
 
 
