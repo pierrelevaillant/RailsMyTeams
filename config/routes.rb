@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  authenticated :user, lambda {|u| u.superadmin } do
-   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  end
-
-
-  # namespace :admin do
-  #   resources :players
-  #   resources :categories
-  #   resources :teams
-  #   resources :convocations
+  # authenticated :user, lambda {|u| u.superadmin } do
+  #  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # end
+
+
+  namespace :admin do
+    resources :players
+    resources :categories
+    resources :teams
+    resources :convocations
+  end
 
   devise_for :users
   #devise_for :admin

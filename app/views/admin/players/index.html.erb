@@ -5,6 +5,6 @@
 <a href=""></a>
 <ul>
 	<% @players.each do |player| %>
-	<li><%= player.first_name + " " + player.last_name %></li>
+	<li><%= player.first_name + " " + player.last_name %> | <%= link_to('Modifier', edit_admin_player_path(player)) %></li>
 	<% end %>
 </ul>

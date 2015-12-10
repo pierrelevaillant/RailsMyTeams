@@ -11,4 +11,10 @@ class Admin::PlayersController < AdminController
 	   	@player = Player.find(params[:id])
 	end
 
+	def update
+        @player = Player.find(params[:id])
+        @player.update_attributes(params.require(:player).permit(:first_name, :last_name))
+        redirect_to admin_players_path
+    end
+
 end
