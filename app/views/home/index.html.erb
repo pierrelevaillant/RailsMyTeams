@@ -1,7 +1,5 @@
 <h1>Bienvenue !</h1>
 
-<h2>Liste des catégories</h2>
-
 <ul>
 	<% @categories.each do |category| %>
 	<li><%= link_to category.category_name, category_path(category.id) %></li>
