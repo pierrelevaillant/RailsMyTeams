@@ -1,7 +1,11 @@
 class AdminController < ApplicationController
-
   before_action :authenticate_user!
-  
+  layout 'admin'
+
+	def index
+
+	end
+
   def convocations
   	@convocations = Convocation.all
   end

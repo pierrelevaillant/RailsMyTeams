@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgres as the database for Active Record
 gem 'pg'
-# Use Devise as authentication user
+# Use Devise for the Authentication
 gem 'devise'
+# Use RailsAdmin form the dashboard
+gem 'rails_admin'
+# Use CanCanCan for the Authorization
+gem "cancancan"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

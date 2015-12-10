@@ -6,23 +6,16 @@
 $light-grey: #f5f5f5;
 $dark-grey: #99a9b3;
 $grey: rgba(219,230,236,0.5);
+$second-color: #FFD460;
 $body-copy: #3b444f;
 $body-font-color:#565a5c;
 $highlight-error: #fa5e5b;
 $highlight-success: #16c98d;
 $highlight-warning: #feef6d;
 $highlight-announcement: #288ad6;
-$main-color:#fa5e5b;
+$main-color:#4CA8E6;
 
-// Fonts
-@font-face {
-  font-family: 'CircularStd-Book';
-  src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),  url('../fonts/CircularStd-Book.woff') format('woff'), url('../fonts/CircularStd-Book.ttf')  format('truetype'), url('../fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-$main-font: 'CircularStd-Book', sans-serif;
+$main-font: 'Helvetica Neue', sans-serif;
 
 // Spacing
 $base-space:1.5em;
@@ -32,16 +25,17 @@ $medium-space:$base-space*0.5;
 body {
 	background:#fff;
 	color:$body-font-color;
+	font-family:$main-font;
 	line-height:1.7;
 	letter-spacing:.1px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family:$main-font;
+h1 {
+	color:$main-color;
 }
 
-h2 {
-	color:$dark-grey;
+h1, h2, h3, h4, h5, h6 {
+	font-family:$main-font;
 }
 
 .button {
@@ -116,3 +110,13 @@ table {
 	table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, table tbody tr td, table tr td {
 		line-height: 1.7;
 	}
+
+footer {
+	background:$light-grey;
+	color:$body-font-color;
+	padding:$double-space 0;
+
+	&--copyright {
+		border-top:1px solid rgba(#fff, .1);
+	}
+}
