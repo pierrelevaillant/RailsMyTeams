@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    resources :players
-  end
 
   # Admin congroller
-  get 'admin/convocations'
-  get 'admin/teams'
-  get 'admin/categories'
-
-  get 'categories/show'
+  namespace :admin do
+    resources :players
+    resources :categories
+    resources :teams
+    resources :convocations
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
