@@ -25,7 +25,9 @@
 
 			<% if user_signed_in? %>
 
-			<li><%= link_to 'Administration', admin_root_path %></li>
+					<% if current_user.superadmin %>
+						<li><%= link_to 'Administration', admin_root_path %></li>
+					<% end %>
 
 			<li class="divider"></li>
 			<li class="has-dropdown not-click"><a href="#"><%= current_user.email %></a>
