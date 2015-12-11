@@ -3,14 +3,11 @@ default: &default
   encode: unicode
   pool: 5
   timeout: 5000
-  host: ec2-54-83-59-203.compute-1.amazonaws.com
-  username: gzgmfpnetwrtgl
-  password: oyCemn3wdcUc2huPq7pvhFNiLJ
 
 development:
   <<: *default
-  #database: MyTeam_development
-  database: de36h603dops8p
+  database: MyTeam_development
+  #database: de36h603dops8p
 
 test:
   <<: *default
