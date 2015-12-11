@@ -15,12 +15,18 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @teams.each do |team| %>
+		<% @categories.each do |cat| %>
 		<tr>
-			<td><%= team.team_name %></td>
-			<td><%=  team.created_at %></td>
-			<td class="text-right"><%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
+			<td><%= cat.category_name %></td>
+			<td><%=  cat.created_at %></td>
 		</tr>
+		<tr>
+		<% @teams.each do |team| %>
+					<% if team.category_id ==  cat.id %>
+					<td><%= team.team_name %> | <%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
+					<% end %>
+				<% end %>
 		<% end %>
+		<tr>
 	</tbody>
 </table>

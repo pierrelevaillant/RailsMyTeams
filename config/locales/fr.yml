@@ -30,6 +30,14 @@ fr:
           password_confirmation: "Confirmation du mot de passe"
           current_password: "Mot de passe actuel"
           remember_me: "Se souvenir de moi"
+        team:
+          team_name: Nom de l'équipe
+      errors:
+        models:
+          team:
+            attributes:
+              team_name:
+                blank: doit être rempli
   devise:
     confirmations:
       confirmed: 'Votre compte a été confirmé avec succès.'
@@ -80,6 +88,7 @@ fr:
       unlocked: 'Votre compte a été déverrouillé avec succès, veuillez vous connecter pour continuer.'
   errors:
     messages:
+      toto: "Un nom d'équipe est obligatoire."
       already_confirmed: "a déjà été validé(e), veuillez essayer de vous connecter"
       confirmation_period_expired: "à confirmer dans les %{period}, merci de faire une nouvelle demande"
       expired: "a expiré, merci d'en faire une nouvelle demande"
