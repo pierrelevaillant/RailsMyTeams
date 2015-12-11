@@ -20,7 +20,7 @@
 		<% @convocations.each do |convocation| %>
 		<tr>
 			<td>#<%= convocation.id %></td>
-			<td><%= convocation.created_at %></td>
+			<td><%= convocation.created_at.strftime("%m/%d/%Y") %></td>
 			<td class="text-right">
 				<%= link_to "Modifier", edit_admin_convocation_path(convocation) %> - <%= link_to "Supprimer", admin_convocation_path(convocation), :method => :delete %></a>
 			</tr>

@@ -21,7 +21,7 @@
 		<% if team.category_id ==  cat.id %>
 		<tr>
 			<td><%= team.team_name %></td>
-			<td><%= team.created_at %></td>
+			<td><%= team.created_at.strftime("%m/%d/%Y") %></td>
 			<td class="text-right"><%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
 		</tr>
 		<% end %>
