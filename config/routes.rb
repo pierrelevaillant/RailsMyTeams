@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :teams
     resources :convocations
   end
-
+  
   devise_for :users
 
   root 'home#index'
@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   resources :convocations
+
+  # 404 Erreur
+  get "*any", via: :all, to: "application#record_not_found"
 
 end

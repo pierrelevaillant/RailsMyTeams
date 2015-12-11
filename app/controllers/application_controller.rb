@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 	
-	private
 	def record_not_found
 		render "partials/404", status: 404
 	end
