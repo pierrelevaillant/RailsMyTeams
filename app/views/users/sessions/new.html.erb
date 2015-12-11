@@ -1,17 +1,17 @@
 <div class="large-4 large-centered columns">
   <div class="login-box">
-    <h1 class="text-center">Se connecter</h1><br>
+    <h1 class="text-center"><%= t("users.sessions.title") %></h1>
     <div class="row">
       <div class="large-12 columns">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="row">
          <div class="large-12 columns">
-          <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+          <%= f.email_field :email, autofocus: true, placeholder: t("users.shared.placeholder_email") %>
         </div>
       </div>
       <div class="row">
        <div class="large-12 columns">
-        <%= f.password_field :password, autocomplete: "off",  placeholder: "Mot de passe" %>
+        <%= f.password_field :password, autocomplete: "off",  placeholder: t("users.shared.placeholder_password") %>
       </div>
     </div>
     <div class="row">
@@ -19,9 +19,9 @@
       <div class="large-12 large-centered columns">
         <% if devise_mapping.rememberable? -%>
         <%= f.check_box :remember_me %>
-        <%= f.label "Se souvenir de moi" %>
+        <%= f.label :remember_me %>
         <% end -%>
-        <%= f.submit "Se connecter", :class => "button expand radius" %>
+        <%= f.submit t("users.shared.log_in"), :class => "button expand" %>
       </div>
     </div>
     <% end %>
