@@ -10,7 +10,7 @@ default: &default
 development:
   <<: *default
   #database: MyTeam_development
-  database: de36h603dops8p
+  database: dcgs6uov6e0opb
 
 test:
   <<: *default
