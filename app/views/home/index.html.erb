@@ -1,7 +1,18 @@
-<div class="text-center">
-
-	<h1>Bienvenue !</h1>
-
-	<%= image_tag("animation.gif", :width => "250px", :alt => "Animation") %>
-
+<div class="columns small-12">
+	<h1>Équipes</h1>
 </div>
+
+<% @categories.each do |cat| %>
+<div class="columns small-12 convocation--item--category"><h2><%= cat.category_name %></h2></div>
+<% @teams.each do |team| %>
+<% if team.category_id == cat.id %>
+<div class="columns medium-4">
+	<%= link_to team_path(team) do %>
+	<div class="convocation--item">
+		<%= team.team_name %>
+	</div>
+	<% end %>
+</div>
+<% end %>
+<% end %>
+<% end %>

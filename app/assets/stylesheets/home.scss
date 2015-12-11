@@ -170,12 +170,58 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 	}
 }
 
+.convocation--item {
+	background:$body-copy url(../../../images/soccer.png) no-repeat center center;
+	background-size:100%;
+	border-radius:6px;
+	text-align:center;
+	padding:$double-space 0;
+	color:#fff;
+	margin:$medium-space 0;
+	transition: all .3s ease-in-out;
+
+	&:hover {
+		transform: scale(1.05); 
+	}
+
+	h4 {
+		color:$light-grey;
+	}
+}
+
+.convocation--item--category {
+	h2 { 
+		color:$dark-grey;
+	}
+}
+
 .panel {
 	margin-top:$double-space;
 	border:1px dashed $second-color;
 	color:$second-color;
 	background:#fff;
 	border-radius:6px;
+}
+.teams--table {
+	tr.even, tr.alt, tr:nth-of-type(even) {
+		background:#fff;
+	}
+
+	.categorie--cell {
+		background:rgba($light-grey, .5) !important;
+		td {
+			color:$dark-grey;
+		}
+	}
+
+}
+
+[class*="column"]+[class*="column"]:last-child { 
+	float: left;
+}
+
+.top-bar-section {
+	ul li > a { font-family:$main-font; }
 }
 
 footer {

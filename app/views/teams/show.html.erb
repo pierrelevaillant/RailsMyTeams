@@ -1,0 +1,39 @@
+<h1><%= @team.team_name %></h1>
+
+<% if @last_convocation %>
+
+<p><%= @last_convocation.opposing_team %></p>
+<% if @last_convocation.home %>
+<p>A domicile</p>
+<% else %>
+<p>A l'extérieur</p>
+<% end %>
+
+<p>Date du match : <%= @last_convocation.date %></p>
+<p>Lieu de rendez-vous : <%= @last_convocation.appointment_place %></p>
+<p>Heure du rendez-vous : <%= @last_convocation.appointment_time %></p>
+<p>Heure du match : <%= @last_convocation.game_time %></p>
+
+<% if @last_convocation.players %>
+<table style="border-collapse: collapse" width="100%">
+	<thead>
+		<th>Joueurs convoqués</th>
+	</thead>
+	<tbody>
+		<% @last_convocation.players.each do |player| %>
+		<tr>
+			<td><%= player.name %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% else %>
+<p>Aucun joueur convoqué pour ce match.</p>
+<% end %>
+<% if !@last_convocation.informations.blank? %>
+<h4>Informations diverses</h4>
+<p><%= @last_convocation.informations %></p>
+<% end %>
+<% else %>
+<p>Aucune convocation n'est disponible pour cette équipe.</p>
+<% end %>

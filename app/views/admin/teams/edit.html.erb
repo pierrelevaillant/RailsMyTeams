@@ -1,18 +1,23 @@
+<h1>Editer une équipe</h1>
+
+<hr>
+
 <% if @team.errors.any? %>
-  <div class="error"> 
-    <ul>
+<div class="error"> 
+  <ul>
     <% @team.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <li><%= msg %></li>
     <% end %>
-    </ul>
-  </div>
+  </ul>
+</div>
 <% end %>
 <%= form_for [:admin, @team] do |f| %>
 
-	<%= f.label :team_name %>
-	<%= f.text_field :team_name, class: 'form-control' %>
+<%= f.label :team_name %>
+<%= f.text_field :team_name, class: 'form-control' %>
 
-	<%= select("team", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
+<%= f.label "Catégorie" %>
+<%= select("team", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
 
-	<%= f.submit "Enregistrer", class: "button small radius success" %>
+<%= f.submit "Enregistrer", class: "button small radius success" %>
 <% end %>

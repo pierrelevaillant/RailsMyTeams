@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
   resources :users
   resources :categories
-  resources :convocations
+  resources :teams
 
   # 404 Erreur
-  get "*any", via: :all, to: "application#record_not_found"
+  #get "*any", via: :all, to: "application#record_not_found"
 
 end

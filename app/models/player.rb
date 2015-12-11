@@ -7,4 +7,8 @@ class Player < ActiveRecord::Base
 	accepts_nested_attributes_for :category
 	accepts_nested_attributes_for :convocations
 
+	def name
+		self.first_name + ' ' + self.last_name
+	end
+
 end
