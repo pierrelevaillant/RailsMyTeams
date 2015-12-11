@@ -10,6 +10,7 @@ class Admin::ConvocationsController < AdminController
 
 	def create
 		@convocation = Convocation.new(convocation_params)
+		@convocation.user_id = current_user.id
 		if @convocation.save
 			redirect_to admin_convocations_path
 		else
@@ -24,6 +25,7 @@ class Admin::ConvocationsController < AdminController
 
 	def update
 		@convocation = Convocation.find(params[:id])
+		@convocation.user_id = current_user.id
 		@convocation.update_attributes(convocation_params)
 		redirect_to admin_convocations_path
 	end
@@ -36,6 +38,6 @@ class Admin::ConvocationsController < AdminController
 
 	private
 	def convocation_params
-		params.require(:convocation).permit(:informations, :opposing_team, :home)
+		params.require(:convocation).permit(:appointment_place, :appointment_time, :opposing_team, :game_time, :team_id, :date,:informations, :opposing_team, :home, player_ids: [])
 	end
 end

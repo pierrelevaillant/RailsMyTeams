@@ -1,6 +1,7 @@
 class Admin::TeamsController < AdminController
 	def index
 		@teams = Team.all
+        @categories = Category.all
 	end
 
     def new
@@ -8,11 +9,11 @@ class Admin::TeamsController < AdminController
     end
 
     def create
-        @team = Team.new(params.require(:team).permit(:team_name, player_ids: []))
+        @team = Team.new(params.require(:team).permit(:team_name, :category_id))
         if @team.save
           redirect_to admin_teams_path
         else
-          redirect_to new_admin_teams_path
+          render :new
         end
     end
 
@@ -27,7 +28,7 @@ class Admin::TeamsController < AdminController
 
 	def update
         @team = Team.find(params[:id])
-        @team.update_attributes(params.require(:team).permit(:team_name, player_ids: []))
+        @team.update_attributes(params.require(:team).permit(:team_name, :category_id))
         redirect_to admin_teams_path
     end
 

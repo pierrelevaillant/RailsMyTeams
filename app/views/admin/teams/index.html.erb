@@ -2,11 +2,11 @@
 
 <div class="clearfix">
 	<div class="right">
-	<%= link_to('Ajouter une équipe', new_admin_team_path, class: "button small radius success") %>
+		<%= link_to('Ajouter une équipe', new_admin_team_path, class: "button small radius success") %>
 	</div>
 </div>
 
-<table style="border-collapse: collapse" width="100%">
+<table style="border-collapse: collapse" class="teams--table" width="100%">
 	<thead>
 		<tr>
 			<th>Équipe</th>
@@ -15,12 +15,18 @@
 		</tr>
 	</thead>
 	<tbody>
+		<% @categories.each do |cat| %>
+		<tr class="categorie--cell"><td>Catégorie : <%= cat.category_name %></td><td></td><td></td></tr>
 		<% @teams.each do |team| %>
+		<% if team.category_id ==  cat.id %>
 		<tr>
 			<td><%= team.team_name %></td>
-			<td><%=  team.created_at %></td>
+			<td><%= team.created_at %></td>
 			<td class="text-right"><%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
 		</tr>
 		<% end %>
-	</tbody>
+		<% end %>
+	</tr>
+	<% end %>
+</tbody>
 </table>

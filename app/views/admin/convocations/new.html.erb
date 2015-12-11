@@ -1,7 +1,19 @@
 <h1>Ajouter une convocation</h1>
 
-<%= @convocation.errors.full_messages.join(",") %>
+<% if @convocation.errors.any? %>
+  <div class="error"> 
+    <ul>
+    <% @convocation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 
 <%= form_for [:admin, @convocation] do |f| %>
-<%= render :partial => 'partials/convocation' , :locals => { :f => f  } %>
+	<%= render :partial => 'partials/convocation' , :locals => { :f => f  } %>
+	<p>
+		<%= f.submit "Ajouter", :class => "button small" %>
+	</p>
 <% end %>
