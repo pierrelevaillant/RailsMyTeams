@@ -6,7 +6,7 @@
 $light-grey: #edf1f7;
 $dark-grey: #99a9b3;
 $grey: rgba($dark-grey, 0.1);
-$second-color: #E64B1C;
+$second-color: #FF3D4E;
 $body-copy: #3b444f;
 $body-font-color:#565a5c;
 $highlight-error: #fa5e5b;
@@ -168,6 +168,14 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 			padding:$base-space; 
 		}
 	}
+}
+
+.panel {
+	margin-top:$double-space;
+	border:1px dashed $second-color;
+	color:$second-color;
+	background:#fff;
+	border-radius:6px;
 }
 
 footer {

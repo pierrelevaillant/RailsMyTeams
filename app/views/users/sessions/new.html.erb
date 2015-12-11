@@ -1,6 +1,6 @@
 <div class="large-4 large-centered columns">
   <div class="login-box">
-    <h1 class="text-center">Log in</h1>
+    <h1 class="text-center">Se connecter</h1><br>
     <div class="row">
       <div class="large-12 columns">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -11,7 +11,7 @@
       </div>
       <div class="row">
        <div class="large-12 columns">
-        <%= f.password_field :password, autocomplete: "off",  placeholder: "Password" %>
+        <%= f.password_field :password, autocomplete: "off",  placeholder: "Mot de passe" %>
       </div>
     </div>
     <div class="row">
@@ -19,9 +19,9 @@
       <div class="large-12 large-centered columns">
         <% if devise_mapping.rememberable? -%>
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label "Se souvenir de moi" %>
         <% end -%>
-        <%= f.submit "Log in", :class => "button expand" %>
+        <%= f.submit "Se connecter", :class => "button expand radius" %>
       </div>
     </div>
     <% end %>

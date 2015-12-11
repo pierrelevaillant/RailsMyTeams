@@ -15,16 +15,15 @@
 
   <%= render partial: "partials/navigation" %>
 
+  <% if notice %>
+  <div class="panel row"><%= notice %></div>
+  <% end %>
+
+  <% if alert %>
+  <div class="panel row"><%= alert %></div>
+  <% end %>
+
   <main class="row">
-
-    <% if notice %>
-    <div class="panel"><%= notice %></div>
-    <% end %>
-
-    <% if alert %>
-    <div class="panel"><%= alert %></div>
-    <% end %>
-
     <%= yield %>
   </main>
 
