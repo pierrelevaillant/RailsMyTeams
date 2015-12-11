@@ -1,4 +1,4 @@
 class Assign < ActiveRecord::Base
-	belongs_to :user
-	belongs_to :convocation
+	belongs_to :player
+	belongs_to :team
 end

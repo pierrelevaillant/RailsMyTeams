@@ -1,0 +1,22 @@
+<%= link_to 'Retour à la liste des joueurs' , admin_players_path, :class => "grey" %>
+
+<h1>Editer un joueur</h1>
+
+<hr>
+
+<%= form_for [:admin, @player] do |f| %>
+
+<% if notice %>
+<div class="panel"><%= notice %></div>
+<% end %>
+
+<%= f.text_field :first_name, placeholder: 'Nom' %>
+<%= f.text_field :last_name, placeholder: 'Prénom' %>
+<%= f.fields_for :category do |cat| %>
+<%= f.label "Catégorie" %>
+<%= select("player", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
+<% end %>
+
+<%= f.submit "Editer", class: "button small radius" %>
+
+<% end %>

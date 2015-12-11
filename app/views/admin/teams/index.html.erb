@@ -1,0 +1,26 @@
+<h1>Équipes</h1>
+
+<div class="clearfix">
+	<div class="right">
+	<%= link_to('Ajouter une équipe', new_admin_team_path, class: "button small radius success") %>
+	</div>
+</div>
+
+<table style="border-collapse: collapse" width="100%">
+	<thead>
+		<tr>
+			<th>Équipe</th>
+			<th>Date de création</th>
+			<th class="text-right">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @teams.each do |team| %>
+		<tr>
+			<td><%= team.team_name %></td>
+			<td><%=  team.created_at %></td>
+			<td class="text-right"><%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

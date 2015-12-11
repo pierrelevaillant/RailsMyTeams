@@ -1,0 +1,10 @@
+<h1>Modifier une catégorie</h1>
+
+<hr>
+
+<%= @category.errors.full_messages.join(",") %>
+
+<%= form_for [:admin, @category] do |f| %>
+<%= f.text_field :category_name, placeholder: 'Nom de la catégorie' %>
+<%= f.submit "Editer", class: "button small radius success" %>
+<% end %>

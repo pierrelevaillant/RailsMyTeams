@@ -3,19 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Colors 
-$light-grey: #f5f5f5;
+$light-grey: #edf1f7;
 $dark-grey: #99a9b3;
-$grey: rgba(219,230,236,0.5);
-$second-color: #FFD460;
+$grey: rgba($dark-grey, 0.1);
+$second-color: #FF3D4E;
 $body-copy: #3b444f;
 $body-font-color:#565a5c;
 $highlight-error: #fa5e5b;
 $highlight-success: #16c98d;
 $highlight-warning: #feef6d;
 $highlight-announcement: #288ad6;
-$main-color:#4CA8E6;
+$main-color:#415fd9;
+$border-color: #e0e5ed;
 
-$main-font: 'Helvetica Neue', sans-serif;
+@font-face {
+	font-family: 'CircularStd-Book';
+	src: url('../fonts/CircularStd-Book.eot');
+	src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/CircularStd-Book.woff') format('woff');
+	src: url('../fonts/CircularStd-Book.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+$main-font: 'CircularStd-Book', sans-serif;
 
 // Spacing
 $base-space:1.5em;
@@ -23,7 +34,7 @@ $double-space:$base-space*2;
 $medium-space:$base-space*0.5;
 
 body {
-	background:#fff;
+	background:$light-grey;
 	color:$body-font-color;
 	font-family:$main-font;
 	line-height:1.7;
@@ -32,6 +43,11 @@ body {
 
 h1 {
 	color:$main-color;
+	margin-top:0;
+}
+
+h2, h3, h4, h5, h6 {
+	color:$second-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,7 +81,11 @@ a {
 }
 
 main {
-	padding:$double-space 0;
+	padding:$double-space;
+	margin-top:$double-space !important;
+	background:#fff;
+	border:1px solid $border-color;
+	border-radius:6px;
 }
 
 .top {
@@ -75,7 +95,7 @@ main {
 	padding:$base-space/2 $base-space;
 }
 
-nav {
+.nav {
 
 	.nav--logo {
 		color:#fff;
@@ -105,11 +125,58 @@ table {
 		color:$body-font-color;
 	}
 
-	}
+}
 
-	table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, table tbody tr td, table tr td {
-		line-height: 1.7;
+table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, table tbody tr td, table tr td {
+	line-height: 1.7;
+}
+
+
+.top--bar {
+	background:$main-color;
+	color:#fff;
+	padding:$medium-space;
+
+	a {
+		color:#fff;
 	}
+}
+
+.menu--bar {
+	background:#fff;
+	border-bottom:1px solid $border-color;
+	text-align:center;
+
+	ul {
+		margin:0;
+		padding:0;
+
+		a {
+			color:$dark-grey;
+			line-height: 60px;
+			border-bottom:2px solid $border-color;
+
+			&:hover {
+				color:$second-color;
+				border-bottom:2px solid $second-color;
+			}
+		}
+
+		li {
+			display: inline;
+			list-style: none; /* nécessaire pour IE7 */
+			padding:$base-space; 
+		}
+	}
+}
+
+.panel {
+	margin-top:$double-space;
+	border:1px dashed $second-color;
+	color:$second-color;
+	background:#fff;
+	border-radius:6px;
+}
 
 footer {
 	background:$light-grey;
