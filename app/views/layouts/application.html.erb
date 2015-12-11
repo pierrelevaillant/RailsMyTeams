@@ -25,11 +25,14 @@
 
     <div class="right">
      <%= link_to 'Convocations', categories_path %>
-     <a href="/a-propos" alt="A propos">A propos</a>
+     <%= link_to 'À propos', about_path %>
       <% if user_signed_in? %>
         <a href="#">Logged in as Pierre</a>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
-          <%= link_to 'Edit profile', edit_user_registration_path %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <%= link_to 'Edit profile', edit_user_registration_path %>
+        <% if current_user.superadmin? %>
+          <%= link_to 'Admin Panel', admin_dashboard_index_path %>
+        <% end %>
       <% else %>
       <%= link_to "Se connecter", new_user_session_path %>
       <% end %>
@@ -43,7 +46,7 @@
 </header>
 
   <main class="row">
-  
+
     <% if notice %>
     <div class="panel"><%= notice %></div>
     <% end %>
