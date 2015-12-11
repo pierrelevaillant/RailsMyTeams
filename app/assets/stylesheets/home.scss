@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Colors 
+// Colors
 $light-grey: #edf1f7;
 $dark-grey: #99a9b3;
 $grey: rgba($dark-grey, 0.1);
@@ -18,10 +18,10 @@ $border-color: #e0e5ed;
 
 @font-face {
 	font-family: 'CircularStd-Book';
-	src: url('../fonts/CircularStd-Book.eot');
-	src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype');
-	src: url('../fonts/CircularStd-Book.woff') format('woff');
-	src: url('../fonts/CircularStd-Book.ttf') format('truetype');
+	src: asset-url('CircularStd-Book.eot');
+	src: asset-url('CircularStd-Book.eot?#iefix') format('embedded-opentype');
+	src: asset-url('CircularStd-Book.woff') format('woff');
+	src: asset-url('CircularStd-Book.ttf') format('truetype');
 	font-weight: 500;
 	font-style: normal;
 }
@@ -116,7 +116,7 @@ main {
 
 table thead {
 	background:$body-copy;
-	tr th { 
+	tr th {
 		color:#fff;
 	}
 }
@@ -140,6 +140,7 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 	a {
 		color:#fff;
 	}
+
 }
 
 .menu--bar {
@@ -156,7 +157,7 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 			line-height: 60px;
 			border-bottom:2px solid $border-color;
 
-			&:hover {
+			&:hover, &.active {
 				color:$second-color;
 				border-bottom:2px solid $second-color;
 			}
@@ -165,13 +166,13 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 		li {
 			display: inline;
 			list-style: none; /* nécessaire pour IE7 */
-			padding:$base-space; 
+			padding:$base-space;
 		}
 	}
 }
 
 .convocation--item {
-	background:$body-copy url(../../../images/soccer.png) no-repeat center center;
+	background:$body-copy image-url("soccer.png") no-repeat center center;
 	background-size:100%;
 	border-radius:6px;
 	text-align:center;
@@ -181,7 +182,7 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 	transition: all .3s ease-in-out;
 
 	&:hover {
-		transform: scale(1.05); 
+		transform: scale(1.05);
 	}
 
 	h4 {
@@ -190,7 +191,7 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 }
 
 .convocation--item--category {
-	h2 { 
+	h2 {
 		color:$dark-grey;
 	}
 }
@@ -216,7 +217,7 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 
 }
 
-[class*="column"]+[class*="column"]:last-child { 
+[class*="column"]+[class*="column"]:last-child {
 	float: left;
 }
 

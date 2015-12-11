@@ -20,10 +20,10 @@
 	<div class="menu--bar">
 		<div class="row">
 			<ul>
-				<li><%= link_to "Convocations", admin_convocations_path %></li>
-				<li><%= link_to "Catégories", admin_categories_path %></li>
-				<li><%= link_to "Equipes", admin_teams_path %></li>
-				<li><%= link_to "Joueurs", admin_players_path %></li>
+				<li><%= link_to "Convocations", admin_convocations_path, class:currentPath(admin_convocations_path) %></li>
+				<li><%= link_to "Catégories", admin_categories_path, class:currentPath(admin_categories_path) %></li>
+				<li><%= link_to "Equipes", admin_teams_path, class:currentPath(admin_teams_path) %></li>
+				<li><%= link_to "Joueurs", admin_players_path, class:currentPath(admin_players_path) %></li>
 				<li><a href="#" alt="Utilisateurs">Utilisateurs</a></li>
 			</ul>
 		</div>

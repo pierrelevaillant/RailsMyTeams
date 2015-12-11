@@ -16,17 +16,17 @@
 		<ul class="right">
 
 			<li class="divider"></li>
-			<li><%= link_to 'Accueil', root_path %></li>
+			<li class="<%= currentPath(root_path) %>"><%= link_to 'Accueil', root_path %></li>
 
 			<li class="divider"></li>
-			<li><%= link_to 'A propos', about_path %></li>
+			<li class="<%= currentPath(about_path) %>"><%= link_to 'A propos', about_path %></li>
 
 			<li class="divider"></li>
 
 			<% if user_signed_in? %>
 
 			<% if current_user.superadmin %>
-			<li><%= link_to 'Administration', admin_root_path %></li>
+			<li class="<%= currentPath(admin_root_path) %>"><%= link_to 'Administration', admin_root_path %></li>
 			<% end %>
 
 			<li class="divider"></li>
@@ -37,7 +37,7 @@
 				</ul>
 			</li>
 			<% else %>
-			<li><%= link_to "Se connecter", new_user_session_path %></li>
+			<li class="<%= currentPath(new_user_session_path) %>" ><%= link_to "Se connecter", new_user_session_path %></li>
 			<% end %>
 
 		</ul>
