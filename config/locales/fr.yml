@@ -29,7 +29,7 @@ fr:
           password: "Mot de passe"
           password_confirmation: "Confirmation du mot de passe"
           current_password: "Mot de passe actuel"
-          submit: "Mettre à jour"
+          remember_me: "Se souvenir de moi"
   devise:
     confirmations:
       confirmed: 'Votre compte a été confirmé avec succès.'
@@ -94,3 +94,7 @@ fr:
         password: "Mot de passe"
         message_field: "laissez en blanc si vous ne voulez pas changer"
         message_current_password: "nous avons besoin de votre mot de passe actuel pour confirmer vos modifications"
+      sessions:
+        title: "Se connecter"
+        email: "Adresse e-mail"
+        password_confirmation: "Confirmation du mot de passe"
