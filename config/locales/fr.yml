@@ -10,11 +10,38 @@ fr:
           remember_me: "Se souvenir de moi"
         team:
           team_name: Nom de l'équipe
+        convocation:
+          date: Date du match
+          home: Match à domicile
+          appointment_place: Lieu du rendez-vous
+          appointment_time: Heure du rendez-vous
+          game_time: Heure du match
+          opposing_team: Équipe adverse
+          team_id: Équipe
+          players: Joueurs
       errors:
         models:
           team:
             attributes:
               team_name:
+                blank: doit être rempli
+          convocation:
+            attributes:
+              date:
+                blank: doit être rempli
+              home:
+                blank: doit être rempli
+              appointment_place:
+                blank: doit être rempli
+              appointment_time:
+                blank: doit être rempli
+              game_time:
+                blank: doit être rempli
+              opposing_team:
+                blank: doit être rempli
+              team_id:
+                blank: doit être rempli
+              players:
                 blank: doit être rempli
           user:
             attributes:

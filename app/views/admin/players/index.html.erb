@@ -19,7 +19,7 @@
 		<% @players.each do |player| %>
 		<tr>
 			<td><%= player.first_name + " " + player.last_name %> </td>
-			<td></td>
+			<td><%= player.category.category_name %> </td>
 			<td><%=  player.created_at %></td>
 			<td class="text-right"><%= link_to('Modifier', edit_admin_player_path(player)) %> - <%= link_to "Supprimer", admin_player_path(player), :method => :delete %></td>
 		</tr>
