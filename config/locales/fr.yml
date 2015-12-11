@@ -8,6 +8,12 @@ fr:
           password_confirmation: "Confirmation du mot de passe"
           current_password: "Mot de passe actuel"
           remember_me: "Se souvenir de moi"
+      errors:
+          models:
+            user:
+              attributes:
+                current_password:
+                  blank: "est vide"
   devise:
     confirmations:
       confirmed: 'Votre compte a été confirmé avec succès.'
