@@ -6,7 +6,7 @@
 $light-grey: #edf1f7;
 $dark-grey: #99a9b3;
 $grey: rgba($dark-grey, 0.1);
-$second-color: #FFD460;
+$second-color: #E64B1C;
 $body-copy: #3b444f;
 $body-font-color:#565a5c;
 $highlight-error: #fa5e5b;
@@ -16,7 +16,17 @@ $highlight-announcement: #288ad6;
 $main-color:#415fd9;
 $border-color: #e0e5ed;
 
-$main-font: 'Helvetica Neue', sans-serif;
+@font-face {
+	font-family: 'CircularStd-Book';
+	src: url('../fonts/CircularStd-Book.eot');
+	src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/CircularStd-Book.woff') format('woff');
+	src: url('../fonts/CircularStd-Book.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+$main-font: 'CircularStd-Book', sans-serif;
 
 // Spacing
 $base-space:1.5em;
@@ -34,6 +44,10 @@ body {
 h1 {
 	color:$main-color;
 	margin-top:0;
+}
+
+h2, h3, h4, h5, h6 {
+	color:$second-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -143,8 +157,8 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 			border-bottom:2px solid $border-color;
 
 			&:hover {
-				color:$main-color;
-				border-bottom:2px solid $main-color;
+				color:$second-color;
+				border-bottom:2px solid $second-color;
 			}
 		}
 
