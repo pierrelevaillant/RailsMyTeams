@@ -27,8 +27,8 @@
      <%= link_to 'Convocations', categories_path %>
      <%= link_to 'À propos', about_path %>
       <% if user_signed_in? %>
-        <a href="#">Logged in as Pierre</a>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <%= current_user.email %>
+        <%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %>
         <%= link_to 'Edit profile', edit_user_registration_path %>
         <% if current_user.superadmin? %>
           <%= link_to 'Admin Panel', admin_dashboard_index_path %>
