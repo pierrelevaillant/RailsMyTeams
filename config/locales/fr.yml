@@ -89,8 +89,11 @@ fr:
         one: "1 erreur a empêché ce(tte) %{resource} d'être sauvegardé(e) :"
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
   users:
+      passwords:
+        title: "Mot de passe oublié ?"
       registrations:
-        title: "coucou"
+        title_sign_up: "S'inscrire"
+        title_edit: "Editer mon profil"
         password: "Mot de passe"
         message_field: "laissez en blanc si vous ne voulez pas changer"
         message_current_password: "nous avons besoin de votre mot de passe actuel pour confirmer vos modifications"
@@ -103,4 +106,6 @@ fr:
         placeholder_password: "Mot de passe"
         log_in: "Se connecter"
         sign_up: "S'inscrire"
-        forgot_password: "Mot de pase oublier ?"
+        forgot_password: "Mot de pase oublié ?"
+        reset_password_instructions: "Réinitialiser mon mot de passe"
+        update: "Mettre à jour"
