@@ -1,3 +1,4 @@
+<% content_for :title, t('users.registrations.title_edit') %>
 <h1><%= t('users.registrations.title_edit') %></h1>
 
 <%= form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put }) do |f| %>

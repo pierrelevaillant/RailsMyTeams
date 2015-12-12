@@ -116,7 +116,8 @@ fr:
     nav_title_admin: "Administration"
     title_team: "Team"
   admin:
-    index: "Admin"
+    dashboard:
+      index: "Admin"
   users:
       mailer:
         hello: "Bonjour"
