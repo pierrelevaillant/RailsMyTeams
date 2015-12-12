@@ -7,6 +7,8 @@ $light-grey: #edf1f7;
 $dark-grey: #99a9b3;
 $grey: rgba($dark-grey, 0.1);
 $second-color: #FF3D4E;
+$success-color: #2ebd59;
+$main-color-black:#3350c3;
 $body-copy: #3b444f;
 $body-font-color:#565a5c;
 $highlight-error: #fa5e5b;
@@ -207,6 +209,12 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 	color:$second-color;
 	background:#fff;
 	border-radius:6px;
+
+	&.success {
+		border-color: $success-color;
+		color: $success-color;
+	}
+
 }
 .teams--table {
 	tr.even, tr.alt, tr:nth-of-type(even) {
@@ -221,6 +229,13 @@ table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, tabl
 	}
 
 }
+
+.top-bar-section li.active:not(.has-form) {
+	& a:not(.button), & a:not(.button):hover {
+		background: $main-color-black;
+	}
+}
+
 
 [class*="column"]+[class*="column"]:last-child {
 	float: left;
