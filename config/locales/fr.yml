@@ -47,6 +47,8 @@ fr:
             attributes:
               email:
                 blank: "doit être rempli"
+              password:
+                blank: "doit être rempli"
               current_password:
                 blank: "doit être rempli"
   devise:
@@ -109,13 +111,23 @@ fr:
         one: "1 erreur a empêché de passer à l'étape suivante :"
         other: "%{count} erreurs ont empêché de passer à l'étape suivante :"
   users:
+      mailer:
+        hello: "Bonjour"
+        confirm_message: "Vous pouvez confirmer votre compte via le lien ci-dessous :"
+        confirm_link_to: "Confirmer mon compte"
+        reset_message: "Quelqu'un a demandé un lien pour changer votre mot de passe. Vous pouvez le faire via le lien ci-dessous."
+        reset_link_to: "Changer mon mot de passe"
+        reset_text: "Si vous n'êtes pas l'auteur de cette demande, ne vous inquiéter pas."
+        reset_last_text: "Aucune action supplémentaire n'est requise de votre part. Il vous suffit d'ignorer cet e-mail."
       passwords:
-        title: "Mot de passe oublié ?"
+        title_edit: "Changer votre mot de passe"
+        title_forgot: "Mot de passe oublié ?"
+        reset_password_token: ""
       registrations:
         title_sign_up: "S'inscrire"
         title_edit: "Editer mon profil"
         password: "Mot de passe"
-        message_field: "laissez en blanc si vous ne voulez pas changer"
+        message_field: "Laissez en blanc si vous ne voulez pas changer"
         message_current_password: "nous avons besoin de votre mot de passe actuel pour confirmer vos modifications"
       sessions:
         title: "Se connecter"
@@ -126,6 +138,8 @@ fr:
         placeholder_password: "Mot de passe"
         log_in: "Se connecter"
         sign_up: "S'inscrire"
+        new_password: "Nouveau mot de passe"
+        minimum_character: "caractères minimum"
         forgot_password: "Mot de pase oublié ?"
         reset_password_instructions: "Réinitialiser mon mot de passe"
         update: "Mettre à jour"
