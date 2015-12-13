@@ -1,7 +1,7 @@
 fr:
   will_paginate:
-    previous_label: "Précédent"
-    next_label: "Suivant"
+    previous_label: "Suivant"
+    next_label: "Précédent"
   activerecord:
       attributes:
         user:
@@ -131,8 +131,8 @@ fr:
     dashboard:
       index: "Admin"
   teams:
-    previous: "Convocation suivante"
-    next: "Convocation précédente"
+    previous: "Convocation précédente"
+    next: "Convocation suivante"
   users:
       mailer:
         hello: "Bonjour"

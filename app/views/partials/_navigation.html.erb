@@ -1,7 +1,7 @@
 <nav class="top-bar" data-topbar="" role="navigation">
 	<ul class="title-area">
 		<li class="name">
-			<h1><a href="/" alt="Accueil"><%= image_tag "logotype.png", :class => 'top-bar--logo' %></h1>
+			<h1><%= link_to root_path do image_tag "logotype.png", :class => 'top-bar--logo' end %></h1>
 		</li>
 		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 	</ul>

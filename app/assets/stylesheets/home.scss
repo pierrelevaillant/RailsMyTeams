@@ -305,6 +305,58 @@ button.success, .button.success {
 	height:30px;
 }
 
+.pagination {
+	.next_page {
+		float:left;
+		padding:0.9375rem;
+	}
+	.previous_page {
+		float:right;
+		padding:0.9375rem;
+	}
+	.disabled {
+		color:rgba($dark-grey, .7);
+		cursor: not-allowed;
+	}
+}
+
+.statistic {
+	background:$grey;
+	border-radius:6px;
+	padding:.5em;
+
+	p {
+		margin-bottom:1em;
+	}
+
+	b {
+		font-size:3em;
+		padding:0;
+	}
+}
+
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+    background: $main-grey;
+    font-size: 14px;
+    color: #576366;
+    width: 100%;
+    font-family: $main-font;
+    padding: 1.2em;
+    outline: 0;
+    border: 2px solid $main-grey;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    box-shadow: none;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+
+    &:focus {
+    	background: #fff;
+    border-color: $main-grey;
+    }
+}
+
 footer {
 	color:$dark-grey;
 	padding:$double-space 0;

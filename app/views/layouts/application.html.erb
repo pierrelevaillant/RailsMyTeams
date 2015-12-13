@@ -14,6 +14,10 @@
 <body>
 
   <%= render partial: "partials/navigation" %>
+
+  <% if current_page?(root_url) %>
+  <%= image_tag "football.png" %>
+  <% end %>
   
   <% if notice %>
   <div class="panel success row"><%= notice %></div>
