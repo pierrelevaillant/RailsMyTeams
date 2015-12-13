@@ -1,16 +1,5 @@
 <% content_for :title, @team.team_name %>
 
-<h1><%= @team.team_name %></h1>
-
-<% if @last_convocation %>
-
-<p><%= @last_convocation.opposing_team %></p>
-<% if @last_convocation.home %>
-<p>A domicile</p>
-<% else %>
-<p>A l'extérieur</p>
-<% end %>
-
 <h1 class="columns medium-12"><%= @team.team_name %></h1>
 
 <% if @last_convocation %>
