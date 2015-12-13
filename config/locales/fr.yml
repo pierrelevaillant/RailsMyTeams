@@ -116,8 +116,8 @@ fr:
         other: "%{count} erreurs ont empêché de passer à l'étape suivante :"
   views:
     pagination:
-      previous: "Précédent"
-      next: "Suivant"
+      previous: "&laquo; Précédent"
+      next: "Suivant &raquo;"
   home:
     index: "Accueil"
     about: "À propos"
