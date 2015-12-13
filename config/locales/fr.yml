@@ -118,7 +118,7 @@ fr:
     index: "Accueil"
     about: "À propos"
     nav_title_admin: "Administration"
-    title_team: "Team"
+    title_team: "L'équipe"
   admin:
     dashboard:
       index: "Admin"

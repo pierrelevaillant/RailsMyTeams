@@ -17,7 +17,7 @@
 	</thead>
 	<tbody>
 		<% @users.each do |user| %>
-		<tr class="categorie--cell">
+		<tr>
 			<td><%= user.email %></td>
 			<th><%= user.superadmin ? "Oui" : "Non" %></th>
 			<td><%=  user.created_at.strftime("%m/%d/%Y") %></td>

@@ -11,33 +11,54 @@
 <p>A l'extérieur</p>
 <% end %>
 
-<p>Date du match : <%= @last_convocation.date.strftime("%m/%d/%Y") %></p>
-<p>Lieu de rendez-vous : <%= @last_convocation.appointment_place.strftime("%R") %></p>
-<p>Heure du rendez-vous : <%= @last_convocation.appointment_time.strftime("%R") %></p>
-<p>Heure du match : <%= @last_convocation.game_time %></p>
+<h1 class="columns medium-12"><%= @team.team_name %></h1>
+
+<% if @last_convocation %>
+<div class="columns medium-6">
+	<p><%= fa_icon "soccer-ball-o" %> <b>Adversaire :</b> <%= @last_convocation.opposing_team %></p>
+	<% if @last_convocation.home %>
+	<p><%= fa_icon "toggle-on" %> À domicile</p>
+	<% else %>
+	<p><%= fa_icon "toggle-off" %> À l'extérieur</p>
+	<% end %>
+	<p><%= fa_icon "calendar-o" %> <b>Date du match :</b> <%= @last_convocation.date.strftime("%m/%d/%Y") %></p>
+</div>
+<div class="columns medium-6">
+	<p><%= fa_icon "clock-o" %> <b>Heure du match :</b> <%= @last_convocation.game_time.strftime("%Hh%M") %></p>
+	<p><%= fa_icon "map-marker" %> <b>Lieu de rendez-vous :</b> <%= @last_convocation.appointment_place %></p>
+	<p><%= fa_icon "clock-o" %> <b>Heure du rendez-vous :</b> <%= @last_convocation.appointment_time.strftime("%Hh%M") %></p>
+</div>
 
 <% if @last_convocation.players %>
-<table style="border-collapse: collapse" width="100%">
-	<thead>
-		<th>Joueurs convoqués</th>
-	</thead>
-	<tbody>
-		<% @last_convocation.players.each do |player| %>
-		<tr>
-			<td><%= player.name %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="columns medium-12">
+	<table style="border-collapse: collapse" width="100%">
+		<thead>
+			<th>Joueurs convoqués</th>
+		</thead>
+		<tbody>
+			<% @last_convocation.players.each do |player| %>
+			<tr>
+				<td><%= player.name %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
 <% else %>
-<p>Aucun joueur convoqué pour ce match.</p>
+<div class="columns medium-12">
+	<p>Aucun joueur convoqué pour ce match.</p>
+</div>
 <% end %>
 <% if !@last_convocation.informations.blank? %>
-<h4>Informations diverses</h4>
-<p><%= @last_convocation.informations %></p>
+<div class="columns medium-12">
+	<h4>Informations diverses</h4>
+	<p><%= @last_convocation.informations %></p>
+</div>
 <% end %>
 <% else %>
-<p>Aucune convocation n'est disponible pour cette équipe.</p>
+<div class="columns medium-12">
+	<p>Aucune convocation n'est disponible pour cette équipe.</p>
+</div>
 <% end %>
 
-<%= will_paginate @convocations %>
+<%= will_paginate @convocations, :page_links => false %>
