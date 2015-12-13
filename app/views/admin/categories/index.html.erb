@@ -18,7 +18,7 @@
 		<% @categories.each do |category| %>
 		<tr>
 			<td><%= category.category_name %></td>
-			<td><%= category.created_at.strftime("%m/%d/%Y") %></td>
+			<td><%= fa_icon "clock-o" %> <%= category.created_at.strftime("%m/%d/%Y") %></td>
 			<td class="text-right"><%= link_to('Modifier', edit_admin_category_path(category)) %> - <%= link_to "Supprimer", admin_category_path(category), :method => :delete %></td>
 		</tr>
 		<% end %>
