@@ -1,0 +1,28 @@
+<h1>Utilisateurs</h1>
+
+<div class="clearfix">
+	<div class="right">
+		<%= link_to('Ajouter un utilisateur', new_admin_user_path, class: "button small radius success") %>
+	</div>
+</div>
+
+<table style="border-collapse: collapse" class="teams--table" width="100%">
+	<thead>
+		<tr>
+			<th>Utilisateur</th>
+			<th>Super admin</th>
+			<th>Date de création</th>
+			<th class="text-right">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+		<tr class="categorie--cell">
+			<td><%= user.email %></td>
+			<th><%= user.superadmin ? "Oui" : "Non" %></th>
+			<td><%=  user.created_at.strftime("%m/%d/%Y") %></td>
+			<td class="text-right"><%= link_to('Modifier', edit_admin_user_path(user)) %> - <%= link_to "Supprimer", admin_user_path(user), :method => :delete %></td>
+		</tr>
+		<% end %>
+</tbody>
+</table>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :teams
     resources :convocations
+    resources :users, :controller => 'users'
   end
 
   # Remove sign up, in this case user not allow to create an account
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   # Main routes
   root 'home#index'
   get 'about', to: 'home#about'
-  resources :users
   resources :categories
   resources :teams
 

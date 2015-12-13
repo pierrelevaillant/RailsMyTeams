@@ -13,7 +13,4 @@
 
 <%= form_for [:admin, @convocation] do |f| %>
 	<%= render :partial => 'partials/convocation' , :locals => { :f => f  } %>
-	<p>
-		<%= f.submit "Ajouter", :class => "button small" %>
-	</p>
 <% end %>

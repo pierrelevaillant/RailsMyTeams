@@ -21,6 +21,10 @@ fr:
           players: Joueurs
       errors:
         models:
+          user:
+            attributes:
+              password:
+                too_short: doit contenir au minimum 8 caractères
           team:
             attributes:
               team_name:

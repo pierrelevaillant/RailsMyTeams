@@ -5,7 +5,10 @@
 
 <p>
 	<%= f.label :home %>
-	<%= f.check_box :home %>
+	<%= f.label :home, "Oui", :value => "true"  %>
+	<%= f.radio_button :home, true %>
+	<%= f.label :home, "Non", :value => "false" %>
+	<%= f.radio_button :home, false, :checked => @convocation.new_record? ? true : false %>
 </p>
 
 <p>
@@ -44,6 +47,12 @@
 		<%= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
 	<% end %>
 </p>
+
+<% if @convocation.new_record? %>
+	<%= f.submit "Ajouter", :class => "button small" %>
+<% else %>
+	<%= f.submit "Modifier", :class => "button small" %>
+<% end %>
 
 
 <script type="text/javascript">

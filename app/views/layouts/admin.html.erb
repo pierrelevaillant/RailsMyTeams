@@ -24,7 +24,9 @@
 				<li><%= link_to "Catégories", admin_categories_path, class:currentPath(admin_categories_path) %></li>
 				<li><%= link_to "Equipes", admin_teams_path, class:currentPath(admin_teams_path) %></li>
 				<li><%= link_to "Joueurs", admin_players_path, class:currentPath(admin_players_path) %></li>
-				<li><a href="#" alt="Utilisateurs">Utilisateurs</a></li>
+				<% if current_user.superadmin %>
+				<li><%= link_to "Utilisateurs", admin_users_path, class:currentPath(admin_users_path) %></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>
