@@ -12,18 +12,20 @@
 	<thead>
 		<tr>
 			<th width="50%"></th>
-			<th>Date de création</th>
+			<th>Date du match</th>
 			<th class="text-right">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @convocations.each do |convocation| %>
 		<tr>
-			<td>#<%= convocation.id %></td>
-			<td><%= convocation.created_at.strftime('%d %B %Y') %></td>
+			<td><%= convocation.home ? convocation.team.team_name + "/" + convocation.opposing_team : convocation.opposing_team + "/" + convocation.team.team_name %></td>
+			<td><%= convocation.date.strftime('%d %B %Y') %></td>
 			<td class="text-right">
 				<%= link_to "Modifier", edit_admin_convocation_path(convocation) %> - <%= link_to "Supprimer", admin_convocation_path(convocation), :method => :delete %></a>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
+
+	<%= will_paginate @convocations, :page_links => false %>

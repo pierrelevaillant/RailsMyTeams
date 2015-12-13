@@ -1,11 +1,13 @@
 <%= f.label :email %>
 <%= f.email_field :email, size: 40 %>
 
+<% if @user.new_record? %>
 <%= f.label :password %>
 <%= f.password_field :password, size: 40 %>
 
 <%= f.label :password_confirmation, "Confirm Password" %>
 <%= f.password_field :password_confirmation, size: 40 %>
+<% end %>
 
 <%= f.label :superadmin %>
 <%= f.label :superadmin, "Oui", :value => "true"  %>

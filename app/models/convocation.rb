@@ -8,9 +8,7 @@ class Convocation < ActiveRecord::Base
 	validates :team_id, presence: true
 	validates :players, presence: true
 
-	self.per_page = 1
-
-	belongs_to :category
+	belongs_to :team
 
 	has_many :assigns
 	has_many :players, through: :assigns

@@ -1,6 +1,6 @@
 class Admin::ConvocationsController < AdminController
 	def index
-		@convocations = Convocation.all
+		@convocations = Convocation.all.paginate(:page => params[:page])
 	end
 
 	def new

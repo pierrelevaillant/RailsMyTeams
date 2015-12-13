@@ -1,6 +1,6 @@
 class Admin::PlayersController < AdminController
 	def index
-		@players = Player.all
+		@players = Player.all.paginate(:page => params[:page])
 	end
 
     def new
