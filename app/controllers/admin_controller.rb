@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-  before_filter :custom_manager, :only => [:index, :convocations, :teams, :categories]
+  before_filter :custom_manager, :only => [:index, :convocations, :teams, :categories, :users]
 
   before_action :authenticate_user!
   layout 'admin'
@@ -20,9 +20,15 @@ class AdminController < ApplicationController
   	@categories = Category.all
   end
 
+  def users
+  end
+
   private
 	def custom_manager
 		authenticate_user!
+    unless current_user.superadmin
+		  redirect_to root_url
+    end
 	end
 
 end
