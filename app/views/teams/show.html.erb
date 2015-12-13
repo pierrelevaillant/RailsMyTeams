@@ -1,3 +1,5 @@
+<% content_for :title, @team.team_name %>
+
 <h1 class="columns medium-12"><%= @team.team_name %></h1>
 
 <% if @last_convocation %>
@@ -48,4 +50,4 @@
 </div>
 <% end %>
 
-<%= will_paginate @convocations, :page_links => false %>
+<%= will_paginate @convocations, :previous_label => t("views.pagination.previous") , :next_label => t("views.pagination.next"), :page_links => false %>
