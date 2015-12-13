@@ -1,3 +1,5 @@
+<% content_for :title, @team.team_name %>
+
 <h1><%= @team.team_name %></h1>
 
 <% if @last_convocation %>
@@ -9,9 +11,9 @@
 <p>A l'extérieur</p>
 <% end %>
 
-<p>Date du match : <%= @last_convocation.date %></p>
-<p>Lieu de rendez-vous : <%= @last_convocation.appointment_place %></p>
-<p>Heure du rendez-vous : <%= @last_convocation.appointment_time %></p>
+<p>Date du match : <%= @last_convocation.date.strftime("%m/%d/%Y") %></p>
+<p>Lieu de rendez-vous : <%= @last_convocation.appointment_place.strftime("%R") %></p>
+<p>Heure du rendez-vous : <%= @last_convocation.appointment_time.strftime("%R") %></p>
 <p>Heure du match : <%= @last_convocation.game_time %></p>
 
 <% if @last_convocation.players %>
