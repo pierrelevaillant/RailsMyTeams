@@ -114,6 +114,10 @@ fr:
       not_saved:
         one: "1 erreur a empêché de passer à l'étape suivante :"
         other: "%{count} erreurs ont empêché de passer à l'étape suivante :"
+  views:
+    pagination:
+      previous: "Précédent"
+      next: "Suivant"
   home:
     index: "Accueil"
     about: "À propos"
