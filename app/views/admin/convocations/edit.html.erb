@@ -1,6 +1,7 @@
-<%= link_to 'Retour à la liste des joueurs' , admin_convocations_path, :class => "grey" %>
-
-<h1>Modifier une convocation</h1>
+<div class="columns medium-12">
+	<%= link_to 'Retour à la liste des convocations' , admin_convocations_path, :class => "grey" %>
+	<h1>Modifier une convocation</h1>
+</div>
 
 <% if @convocation.errors.any? %>
   <div class="error"> 
