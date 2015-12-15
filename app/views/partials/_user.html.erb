@@ -10,10 +10,8 @@
 <% end %>
 
 <%= f.label :superadmin %>
-<%= f.label :superadmin, "Oui", :value => "true"  %>
-<%= f.radio_button :superadmin, true %>
-<%= f.label :superadmin, "Non", :value => "false" %>
-<%= f.radio_button :superadmin, false, :checked => @user.new_record? ? true : false %>
+<%= f.check_box :superadmin %>
+
 
 <p>
   <% if @user.new_record? %>

@@ -11,5 +11,5 @@
 <% end %>
 
 <%= form_for [:admin, @user] do |f| %>
-	<%= render :partial => 'partials/user' , :locals => { :f => f  } %>
+	<%= render :partial => 'partials/user' , locals: { f: f  } %>
 <% end %>

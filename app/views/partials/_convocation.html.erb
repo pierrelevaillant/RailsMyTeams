@@ -5,7 +5,8 @@
 
 <p>
 	<%= f.label :home %>
-	<%= f.check_box :home, {}, "true", "false" %>
+	<%= f.check_box :home %>
+	<%#= select_tag "convocation[home]", "<option value='0'>Non</option><option value='1'>Oui</option>".html_safe %>
 </p>
 
 <p>
@@ -39,10 +40,11 @@
 </p>
 
 <p>
-	<%= f.fields_for :players do |cat| %>
-		<%= f.label :players %>
-		<%= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
-	<% end %>
+
+<%= f.label :players %>
+<%= f.collection_select(:player_ids, Player.all, :id, :name, {}, { multiple: true, class: 'select' }) %>
+<%#= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
+	
 </p>
 
 <% if @convocation.new_record? %>
