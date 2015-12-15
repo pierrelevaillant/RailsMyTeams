@@ -11,10 +11,8 @@
 </div>
 
 <div class="columns medium-12">
-	<%= f.fields_for :players do |cat| %>
-		<%= f.label :players %>
-		<%= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
-	<% end %>
+	<%= f.label :players %>
+	<%= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
 </div>
 
 <div class="columns medium-12">
