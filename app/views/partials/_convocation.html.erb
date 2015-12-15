@@ -1,58 +1,33 @@
-<p>
-	<%= f.label :date %>
-	<%= f.date_field :date %>
-</p>
+<div class="columns medium-6">
+	<p><%= f.label :team_id %> <%= f.select :team_id, Team.all.collect {|team| [team.team_name, team.id]} %></p>
+	<p><%= f.label :opposing_team %> <%= f.text_field :opposing_team %></p>
+	<p><%= f.label :home %> <%= f.check_box :home, {}, "true", "false" %></p>
+	<p><%= f.label :date %> <%= f.date_field :date %></p>
+</div>
+<div class="columns medium-6">
+	<p><%= f.label :game_time %> <%= f.time_field :game_time %></p>
+	<p><%= f.label :appointment_place %> <%= f.text_field :appointment_place %></p>
+	<p><%= f.label :appointment_time %> <%= f.time_field :appointment_time %></p>
+</div>
 
-<p>
-	<%= f.label :home %>
-	<%= f.check_box :home %>
-	<%#= select_tag "convocation[home]", "<option value='0'>Non</option><option value='1'>Oui</option>".html_safe %>
-</p>
+<div class="columns medium-12">
+	<%= f.fields_for :players do |cat| %>
+		<%= f.label :players %>
+		<%= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
+	<% end %>
+</div>
 
-<p>
-	<%= f.label :appointment_place %>
-	<%= f.text_field :appointment_place %>
-</p>
+<div class="columns medium-12">
+	<p><%= f.label :informations %> <%= f.text_area :informations %></p>
+</div>
 
-<p>
-	<%= f.label :appointment_time %>
-	<%= f.time_field :appointment_time %>
-</p>
-
-<p>
-	<%= f.label :game_time %>
-	<%= f.time_field :game_time %>
-</p>
-
-<p>
-	<%= f.label :informations %>
-	<%= f.text_area :informations %>
-</p>
-
-<p>
-	<%= f.label :opposing_team %>
-	<%= f.text_field :opposing_team %>
-</p>
-
-<p>
-    <%= f.label :team_id %>
-	<%= f.select :team_id, Team.all.collect {|team| [team.team_name, team.id]} %>
-</p>
-
-<p>
-
-<%= f.label :players %>
-<%= f.collection_select(:player_ids, Player.all, :id, :name, {}, { multiple: true, class: 'select' }) %>
-<%#= select("convocation", "player_ids", Player.all.collect {|player| [player.first_name + " " + player.last_name , player.id]}, {}, { :multiple => true, :class => "select" }) %>
-	
-</p>
-
-<% if @convocation.new_record? %>
-	<%= f.submit "Ajouter", :class => "button small" %>
-<% else %>
-	<%= f.submit "Modifier", :class => "button small" %>
-<% end %>
-
+<div class="columns medium-12">
+	<% if @convocation.new_record? %>
+		<%= f.submit "Ajouter", :class => "button small radius success" %>
+	<% else %>
+		<%= f.submit "Modifier", :class => "button small radius success" %>
+	<% end %>
+</div>
 
 <script type="text/javascript">
   $('.select').select2();
