@@ -4,20 +4,16 @@
 
 <hr>
 
-<%= form_for [:admin, @player] do |f| %>
-
-<% if notice %>
-<div class="panel"><%= notice %></div>
+<% if @player.errors.any? %>
+  <div class="error"> 
+    <ul>
+    <% @player.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
 
-<%= f.label "Nom" %>
-<%= f.text_field :first_name, class: 'form-control' %>
-
-<%= f.label "Prénom" %>
-<%= f.text_field :last_name, class: 'form-control' %>
-
-<%= f.label "Catégorie" %>
-<%= select("player", "category_id", Category.all.collect {|p| [ p.category_name, p.id ] }) %>
-
-<%= f.submit "Ajouter", class: "button small radius" %>
+<%= form_for [:admin, @player] do |f| %>
+	<%= render :partial => 'partials/player' , :locals => { :f => f  } %>
 <% end %>

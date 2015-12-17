@@ -26,6 +26,12 @@ class Admin::TeamsController < AdminController
 	   	@category = @team.category
 	end
 
+    def destroy 
+        @team = Team.find(params[:id])
+        @team.destroy!
+        redirect_to admin_teams_path
+    end
+
 	def update
         @team = Team.find(params[:id])
         @team.update_attributes(params.require(:team).permit(:team_name, :category_id))

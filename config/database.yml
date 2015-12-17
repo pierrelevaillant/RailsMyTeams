@@ -14,7 +14,8 @@ development:
 
 test:
   <<: *default
-  database: MyTeam_development
+  #database: MyTeam_development
+  database: dcgs6uov6e0opb
 
 production:
   <<: *default

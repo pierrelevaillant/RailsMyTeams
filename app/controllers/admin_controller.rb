@@ -26,9 +26,6 @@ class AdminController < ApplicationController
   private
 	def custom_manager
 		authenticate_user!
-    unless current_user.superadmin
-		  redirect_to root_url
-    end
 	end
 
 end

@@ -16,3 +16,8 @@
  */
  
  @import "font-awesome";
+
+html.turbolinks-progress-bar::before {
+	background-color: gray !important;
+	height: 3px !important;
+}

@@ -1,5 +1,11 @@
 <div class="columns medium-6">
-	<p><%= f.label :team_id %> <%= f.select :team_id, Team.all.collect {|team| [team.team_name, team.id]} %></p>
+	<p><%= f.label :team_id %>
+	<% if current_user.superadmin %>
+		<%= f.select :team_id, Team.all.collect {|team| [team.team_name, team.id]} %>
+	<% else %>
+		<%= f.select :team_id, Team.where(category: current_user.categories).collect {|team| [team.team_name, team.id]} %>
+	<% end %>
+	</p>
 	<p><%= f.label :opposing_team %> <%= f.text_field :opposing_team %></p>
 	<p><%= f.label :home %> <%= f.check_box :home, {}, "true", "false" %></p>
 	<p><%= f.label :date %> <%= f.date_field :date %></p>
@@ -26,7 +32,3 @@
 		<%= f.submit "Modifier", :class => "button small radius success" %>
 	<% end %>
 </div>
-
-<script type="text/javascript">
-  $('.select').select2();
-</script>

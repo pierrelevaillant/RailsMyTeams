@@ -4,6 +4,9 @@ fr:
     next_label: "Précédent"
   activerecord:
       attributes:
+        player:
+          first_name: Prénom du joueur
+          last_name: Nom du joueur
         user:
           email : "Adresse e-mail"
           firstname: "Prenom"
@@ -25,6 +28,12 @@ fr:
           players: Joueurs
       errors:
         models:
+          player:
+            attributes:
+              first_name:
+                blank: doit être rempli
+              last_name:
+                blank: doit être rempli
           user:
             attributes:
               password:

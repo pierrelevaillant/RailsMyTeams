@@ -17,3 +17,9 @@
 
 //= require foundation
 $(function(){ $(document).foundation(); });
+
+Turbolinks.enableProgressBar();
+
+$(document).on('ready page:load', function(e){
+  $('.select').select2();
+});

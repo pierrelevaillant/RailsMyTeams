@@ -10,9 +10,9 @@ class Admin::PlayersController < AdminController
     def create
         @player = Player.new(player_params)
         if @player.save
-          redirect_to admin_players_path
+            redirect_to admin_players_path
         else
-          redirect_to new_admin_players_path
+            render :new        
         end
     end
 

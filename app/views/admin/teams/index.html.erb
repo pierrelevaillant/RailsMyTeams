@@ -21,8 +21,12 @@
 		<% if team.category_id ==  cat.id %>
 		<tr>
 			<td><%= team.team_name %></td>
-			<td><%= team.created_at.strftime("%m/%d/%Y") %></td>
-			<td class="text-right"><%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
+			<% if current_user.categories.map(&:id).include? team.category_id %>
+				<td><%= team.created_at.strftime("%m/%d/%Y") %></td>
+				<td class="text-right"><%= link_to('Modifier', edit_admin_team_path(team)) %> - <%= link_to "Supprimer", admin_team_path(team), :method => :delete %></td>
+			<% else %>
+				<td colspan="2"><%= team.created_at.strftime("%m/%d/%Y") %></td>
+			<% end %>
 		</tr>
 		<% end %>
 		<% end %>

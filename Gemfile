@@ -17,6 +17,12 @@ gem 'foundation-rails'
 gem 'will_paginate'
 gem "font-awesome-rails"
 
+
+group :development, :test do
+	gem 'faker'
+  	gem 'rspec-rails', '~> 3.0'
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
