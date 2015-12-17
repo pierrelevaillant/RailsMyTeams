@@ -3,19 +3,14 @@ default: &default
   encode: unicode
   pool: 5
   timeout: 5000
-  host: ec2-107-20-152-139.compute-1.amazonaws.com
-  username: ocdqscwyjbzkpn
-  password: ymg-KbM9bVko5pFXTnuAR1gbZ6
 
 development:
   <<: *default
-  #database: MyTeam_development
-  database: dcgs6uov6e0opb
+  database: MyTeam_development
 
 test:
   <<: *default
-  #database: MyTeam_development
-  database: dcgs6uov6e0opb
+  database: MyTeam_development
 
 production:
   <<: *default
